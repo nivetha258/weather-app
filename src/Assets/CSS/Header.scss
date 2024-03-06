@@ -1,0 +1,38 @@
+
+.header-section{
+  .colud-icon{
+    font-size: 50px;
+  }
+  .temperature{
+    font-size: 50px
+  }
+  p{margin: 0;}
+    .units{
+      p{
+        font-size: 20px;
+        padding: 0 10px ;
+        color: rgb(130, 130, 124);
+        margin: 0;
+        &::before{
+          content: "";
+          position: relative;
+          display: block;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          top: 50%;
+          left: 0;
+          border: 1px solid white;
+        }
+      }
+      .unit{
+        color: white;}
+     
+    }
+    .report, .date{
+      color: #cdcdc7;
+      font-size: 18px;
+      
+    }
+  }
+        

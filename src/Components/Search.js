@@ -1,23 +1,16 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
-import "../Assets/CSS/Search.css";
+import { useDispatch } from 'react-redux';
+import { setLocation } from "../Store/Reducers";
+import "../Assets/CSS/Search.scss";
 
 const Search = () => {
-  const [location, setLocation] = useState("");
-  const key = "0dba95d4614a12636329ca02ac3037b7";
-
-  console.log("location", location);
-
-  const getData = async () => {
-    try {
-      const api = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${key}&units=metric`;
-      const response = await axios.get(api);
-      console.log("data", response.data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+  const [search, setSearch] = useState("");
+  const dispatch = useDispatch()
+  const getData = () => {
+    dispatch(setLocation(search))
   };
+
   return (
     <div className="search-section">
       <div className="container">
@@ -28,17 +21,17 @@ const Search = () => {
                 type="text"
                 className="w-75 border-0 bg-dark"
                 placeholder="Search"
-                value={location}
+                value={search}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") {
                     getData();
                   }
                 }}
-                onChange={(e) => setLocation(e.target.value)}
+                onChange={(e) => setSearch(e.target.value)}
               ></input>
               <button
                 className="border-0 bg-transparent text-danger"
-                onClick={() => setLocation("")}
+                onClick={() => setSearch("")}
               >
                 <i className="bi bi-x-lg"></i>
               </button>
