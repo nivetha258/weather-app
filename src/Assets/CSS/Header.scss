@@ -11,26 +11,28 @@
       p{
         font-size: 20px;
         padding: 0 10px ;
-        color: rgb(130, 130, 124);
-        margin: 0;
+        color: #d2d2cdb8;
+        margin: 0 10px;
+        position: relative;
         &::before{
           content: "";
-          position: relative;
+          position: absolute;
           display: block;
           width: 5px;
           height: 5px;
           border-radius: 50%;
-          top: 50%;
+          top: 30%;
           left: 0;
           border: 1px solid white;
         }
       }
       .unit{
-        color: white;}
+        color: white;
+      }
      
     }
     .report, .date{
-      color: #cdcdc7;
+      color: #f0f0dbb8;
       font-size: 18px;
       
     }

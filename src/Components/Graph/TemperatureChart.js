@@ -1,71 +1,77 @@
-import React, { useEffect, useRef } from 'react';
-import ApexCharts from 'react-apexcharts';
+import React from 'react';
+import ReactApexChart from 'react-apexcharts';
+import { useSelector } from 'react-redux';
 
-const TemperatureChart = ({temperature, time}) => {
-  const chartRef = useRef(null);
+const TemperatureChart = ({ value, time , component }) => {
+  const unit = useSelector((state)=>state.weather.units)
 
-  useEffect(() => {
-    // Data and options
-    const series = {
-      monthDataSeries1: {
-        prices: temperature,
-        dates: time,
+  const chartData = {
+    series: [
+      {
+        name: ` Max ${Math.max(...value)}`,
+        data: value
       },
-    };
-
-    const options = {
-      series: [
-        {
-          name: 'STOCK ABC',
-          data: series.monthDataSeries1.prices,
-        },
-      ],
+    ],
+    options: {
+    
       chart: {
-        type: 'area',
-        height: 350,
-        zoom: {
-          enabled: false,
+        height: 200,
+        type: 'line',
+        dropShadow: {
+          enabled: true,
+          color: '#000',
+          top: 18,
+          left: 7,
+          blur: 4,
+          opacity: 0.2
         },
+        toolbar: {
+          show: false
+        }
       },
+      colors: ['#ca9b08'],
       dataLabels: {
-        enabled: false,
+        enabled: true,
       },
       stroke: {
-        curve: 'straight',
+        curve: 'smooth'
       },
-      title: {
-        text: 'Fundamental Analysis of Stocks',
-        align: 'left',
+
+      markers: {
+        size: 1
       },
-      subtitle: {
-        text: 'Price Movements',
-        align: 'left',
-      },
-      labels: series.monthDataSeries1.dates,
       xaxis: {
-        type: 'datetime',
+        categories: time,
+        title: {
+          text: 'Time'
+        }
       },
       yaxis: {
-        opposite: true,
+        title: {
+          text: component
+        },
+        min: Math.min(...value) ,
+        max: Math.max(...value)
       },
       legend: {
-        horizontalAlign: 'left',
-      },
-    };
+        position: 'top',
+        horizontalAlign: 'right',
+        floating: true,
+        offsetY: -25,
+        offsetX: -5,
+        colors: ["green"]
+      }
+    },
+  };
 
-    // Initialize chart
-    if (chartRef.current) {
-      const chart = new ApexCharts(chartRef.current, options);
-      chart.render();
-
-      // Cleanup function (destroy the chart on unmount)
-      return () => {
-        chart.destroy();
-      };
-    }
-  }, []); // Empty dependency array ensures the effect runs once after initial render
-
-  return <div id="chart" ref={chartRef} />;
+  return (
+    <div>
+      <div id="chart">
+        <ReactApexChart options={chartData.options} series={chartData.series} type="line" height={200} />
+      </div>
+      <div id="html-dist"></div>
+    </div>
+  );
 };
 
 export default TemperatureChart;

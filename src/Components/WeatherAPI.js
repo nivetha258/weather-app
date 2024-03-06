@@ -8,8 +8,7 @@ const WeatherAPI = () => {
   const key = '0dba95d4614a12636329ca02ac3037b7';
   const location = useSelector((state)=>state.weather.location)
   const unit = useSelector((state)=>state.weather.units)
-  const data =  useSelector((state)=>state.weather.apiData)
-  console.log("da",data)
+
     const dispatch = useDispatch()
 
   useEffect(() => {

@@ -2,4 +2,33 @@ input{
     outline: none;
     color: white;
     width: 100%;
+    
+}
+.chart-section{
+    button{
+        color: black !important;
+    }
+    .nav-tabs .nav-link.active {
+        color:#ca9b08 !important;
+        border-bottom: solid 2px #ca9b08;
+    }
+}
+.dayForecast-section{
+    .dayCard{        
+        // border: 1px solid #ca9b08;
+        overflow: hidden;
+        color: white;
+        
+    }
+    .day{
+        background-color: transparent;
+    }
+    .selectedDay{
+        background-color:#f2efe526;
+        color: white;
+    }
+    .day-cloud{
+        color:#ca9b08;
+        font-size: 38px;
+    }
 }
