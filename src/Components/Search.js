@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { setLocation } from "../Store/Reducers";
-import "../Assets/CSS/Search.scss";
+import { setLocation } from "../store/reducers";
+import "../assets/css/search.scss";
 
 const Search = () => {
   const [search, setSearch] = useState("");

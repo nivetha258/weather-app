@@ -2,7 +2,7 @@
 import { useEffect } from 'react';
 import {  useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
-import { setAPIData } from '../Store/Reducers';
+import { setAPIData } from '../store/reducers';
 
 const WeatherAPI = () => {
   const key = '0dba95d4614a12636329ca02ac3037b7';

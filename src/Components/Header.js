@@ -1,8 +1,8 @@
 import React from 'react'
-import { UseSelector,useDispatch, useSelector } from 'react-redux'
-import { setUnits } from '../Store/Reducers'
-import "../Assets/CSS/Header.scss"
-import{ DateComponent, FormatTime} from './Date'
+import {useDispatch, useSelector } from 'react-redux'
+import { setUnits } from "../store/reducers"
+import "../assets/css/header.scss"
+import{ DateComponent, FormatTime} from './date'
 
 
 const Header = () => {

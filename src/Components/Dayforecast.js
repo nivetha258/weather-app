@@ -1,8 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {DateComponent} from './Date'
-import { setSelectedDay } from '../Store/Reducers'
+import {DateComponent} from './date'
+import { setSelectedDay } from "../store/reducers"
 
 
 const Dayforecast = () => {
