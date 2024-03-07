@@ -21,7 +21,7 @@ const renderDayComponents = () => {
 const dayComponents = [];
 for (let i = 0; i < count; i++) {
     dayComponents.push(
-      <div className={`${selectedDay === i ? "selectedDay col-2  rounded-3" : "day col-2  rounded-3"}`} key={i}>
+      <div className={`${selectedDay === i ? "selectedDay col-4 col-md-2  rounded-3" : "day col-4 col-md-2  rounded-3"}`} key={i}>
         <div className='text-center dayCard' onClick={()=>dispatch(setSelectedDay(i))}>
           <div >
             <DateComponent index={i} />

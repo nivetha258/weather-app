@@ -15,7 +15,7 @@ const Search = () => {
     <div className="search-section">
       <div className="container">
         <div className="row align-items-center justify-content-center">
-          <div className="col-10">
+          <div className="col-lg-10">
             <div className="p-2 border border-white border-1 rounded-4">
               <input
                 type="text"

@@ -14,7 +14,7 @@ const data = useSelector((state)=>state.weather.apiData)
     
     <div className="App bg-dark vh-100 overflow-scroll">
       <div className="row justify-content-center">
-        <div className="col-8">
+        <div className="col-lg-8">
         <h2 className="text-center py-5 text-white">Weather Application</h2>
           <Search />
          { data.length > 0 &&<div>

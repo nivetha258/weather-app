@@ -18,7 +18,7 @@ const Graph = () => {
 
     const time = graphData.map((a)=>FormatTime(a.dt_txt,"graph")) 
   return (
-    <div className='chart-section bg-white'>
+    <div className='chart-section bg-white container overflow-hidden'>
         <ul className="nav nav-tabs" id="myTab" role="tablist">
             <li className="nav-item" role="presentation">
                   <button className="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Temperature</button>
